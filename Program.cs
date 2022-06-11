@@ -7,7 +7,9 @@ namespace algoritmos
         static void Main(string[] args)
         {
             //jokenPo();
-            calculaImc();
+            //calculaImc();
+            //contador();
+            contador2();
         }
 
         static void Escreve(object msg)
@@ -72,14 +74,14 @@ namespace algoritmos
             Sair();
         }
 
-        static void Sair(metodo)
+        static void Sair()
         {
             Thread.Sleep(2000);
             Escreve("1 - Continuar | 0 - Sair");
             int opt = int.Parse(Console.ReadLine());
             switch(opt)
             {
-                case 1:metodo;break;
+                case 1:jokenPo();break;
                 case 0:System.Environment.Exit(0);break;
                 default:Escreve("Opção inválida!");
                 Sair();break;
@@ -110,7 +112,52 @@ namespace algoritmos
               
         }
 
+        static void contador(){
+           Console.Clear();
+           int i = 30;
 
+           while(i >= 1){
+            if(i % 4==0){
+                Escreve($"[{i}]");
+            }
+            else
+            {
+                Escreve(i);
+            }
+            
+            i--;
+           }
+            
+        }
+
+        static void contador2()
+        {
+            Console.Clear();
+            Escreve("Digite o primeiro numero");
+            int n1 = int.Parse(Console.ReadLine());
+            Escreve("Digite o ultimo valor");
+            int n2 = int.Parse(Console.ReadLine());
+
+            if(n1 > n2){
+                Escreve("Numero final menor que o primeiro");
+                Thread.Sleep(1500);
+                contador2();
+            }
+
+            Escreve("Agora, o incremento");
+            int n3 = int.Parse(Console.ReadLine());
+            
+            Escreve("-----------------------");
+
+
+            while(n1 <= n2)
+            {
+                Escreve(n1);
+                n1 = n1 + n3;
+            }
+            Escreve("Acabou!!");
+            Console.ReadLine();
+        }
 
 
     }
