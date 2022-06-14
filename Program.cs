@@ -9,7 +9,8 @@ namespace algoritmos
             //jokenPo();
             //calculaImc();
             //contador();
-            contador2();
+            //contador2();
+            aluguelCarro();
         }
 
         static void Escreve(object msg)
@@ -159,7 +160,43 @@ namespace algoritmos
             Console.ReadLine();
         }
 
-
+        static void aluguelCarro()
+        {
+            Console.Clear();
+            Escreve("Qual tipo do carro?\npopular\nluxo");
+            string carro = Console.ReadLine();
+            Escreve("Quantos dias foram de aluguel?");
+            int dias = int.Parse(Console.ReadLine());
+            Escreve("Quantos km foram rodados?");
+            double km = double.Parse(Console.ReadLine());
+            double aluguel;
+            switch(carro)
+            {
+                case "popular":aluguel=90*dias;
+                if(km <= 100)
+                {
+                   double aluguelFinal=aluguel+(0.20*km);
+                   Escreve($"O preço final ficou em {aluguelFinal.ToString("C")}");
+                }
+                else if(km > 100){
+                    double aluguelFinal=aluguel+0.10*km;
+                    Escreve($"Preço final ficou em {aluguelFinal.ToString("C")} com descontos");
+                }
+                    
+                ;break;
+                case "luxo":aluguel=150*dias;
+                if(km <= 200){
+                    double aluguelFinal=aluguel+0.30*km;
+                    Escreve($"Preço final ficou {aluguelFinal.ToString("C")}");
+                }
+                else if(km > 200){
+                    double aluguelFinal=aluguel+=0.25*km;
+                    Escreve($"Preço final ficou em {aluguelFinal.ToString("C")} com descontos");
+                }
+                ;break;
+                default:System.Environment.Exit(0);break;
+            }
+        }
     }
         
 }
