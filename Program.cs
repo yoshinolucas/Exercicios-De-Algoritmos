@@ -10,7 +10,8 @@ namespace algoritmos
             //calculaImc();
             //contador();
             //contador2();
-            aluguelCarro();
+            //aluguelCarro();
+            somador();
         }
 
         static void Escreve(object msg)
@@ -196,6 +197,21 @@ namespace algoritmos
                 ;break;
                 default:System.Environment.Exit(0);break;
             }
+        }
+
+        static void somador()
+        {
+            Console.Clear();
+            int i = 6;
+            int acumulador = 0;
+            while(i < 100){
+               
+                acumulador = acumulador + i;
+                i = i + 2;
+
+            }
+            Console.WriteLine(acumulador);
+            Console.ReadLine();
         }
     }
         
