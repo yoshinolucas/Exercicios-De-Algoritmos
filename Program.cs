@@ -11,7 +11,8 @@ namespace algoritmos
             //contador();
             //contador2();
             //aluguelCarro();
-            somador();
+            //somador3();
+            somadorImpar();
         }
 
         static void Escreve(object msg)
@@ -210,9 +211,65 @@ namespace algoritmos
                 i = i + 2;
 
             }
-            Console.WriteLine(acumulador);
+            Console.WriteLine();
             Console.ReadLine();
         }
+
+        static void somador2()
+        {
+            Console.Clear();
+            int i = 500;
+            int acumulador = 0;
+            while(i >= 0)
+            {
+               acumulador += i;
+               i -= 50;
+            }
+            System.Console.WriteLine(acumulador);
+        }
+
+        static void somador3()
+        {
+            Console.Clear();
+            int acumulador = 0;
+            for(int i = 7; i > 0; i--){
+                if(i == 7)
+                   Escreve($"Insira 7 números inteiro, aperte ENTER a cada número");
+                else
+                if(i == 1)
+                   Escreve($"Insira o último número inteiro!");
+                else
+                    Escreve($"Insira mais {i} números inteiros");                                
+                int numero = int.Parse(Console.ReadLine());
+                acumulador += numero;
+            }
+            System.Console.WriteLine("Total ficou em " + acumulador);
+            
+
+        }
+
+        static void somadorImpar()
+        {
+            Console.Clear();
+            Escreve("Insira um numero");
+            int n = int.Parse(Console.ReadLine());
+            int acumulador = 0;
+
+            for(int i = 0; i < n; i++)
+            {
+                if(i % 2 == 1)
+                {
+                    Console.Write($"{i} ");
+                    acumulador += i;                   
+                }
+
+            }
+            Console.Write(acumulador);
+            
+ 
+        }
+
+        
     }
         
 }
