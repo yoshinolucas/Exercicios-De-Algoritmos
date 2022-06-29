@@ -12,7 +12,8 @@ namespace algoritmos
             //contador2();
             //aluguelCarro();
             //somador3();
-            somadorImpar();
+            //somadorImpar();
+            calculaSalario();
         }
 
         static void Escreve(object msg)
@@ -269,7 +270,29 @@ namespace algoritmos
  
         }
 
-        
+        static void calculaSalario()
+        {
+            Escreve("Digite o nome do funcionário");
+            string nome = Console.ReadLine();
+            Escreve("Qual o salário?");
+            float salario = float.Parse(Console.ReadLine());
+            if(salario <= 1500) {
+                var novoSalario = salario + salario * 0.25;
+                Escreve($"{nome}, seu salário atual de {salario} será reajustado para {novoSalario}");
+            } else if(salario > 1500 && salario < 3000){
+                var novoSalario = salario + salario * 0.20;
+                Escreve($"{nome}, seu salário atual de {salario} será reajustado para {novoSalario}");  
+            } else if(salario > 3000 && salario < 6000){
+                var novoSalario = salario + salario * 0.15;
+                Escreve($"{nome}, seu salário atual de {salario} será reajustado para {novoSalario}");  
+            } else if(salario > 6000){
+                var novoSalario = salario + salario * 0.10;
+                Escreve($"{nome}, seu salário atual de {salario} será reajustado para {novoSalario}");  
+            }
+
+
+        }
+    
     }
         
 }
