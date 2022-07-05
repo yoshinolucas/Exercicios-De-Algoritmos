@@ -13,7 +13,8 @@ namespace algoritmos
             //aluguelCarro();
             //somador3();
             //somadorImpar();
-            calculaSalario();
+            //calculaSalario();
+            calculaProgressao();
         }
 
         static void Escreve(object msg)
@@ -293,6 +294,24 @@ namespace algoritmos
 
         }
     
+        static void calculaProgressao()
+        {
+            Console.Clear();
+            Escreve("Digite um número");
+            int n = int.Parse(Console.ReadLine());
+            int y = 0;
+            int z = 1;
+            for(int x = 0; x < n ; x++)
+            {              
+                y = y + z;
+                z++;
+                Escreve(y);              
+            }
+
+            
+        
+
+        }
     }
         
 }
